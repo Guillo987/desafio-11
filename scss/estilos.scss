@@ -1,0 +1,319 @@
+//CSS reset
+@import "../scss/utilities/reset";
+
+//Variables
+@import "../scss/utilities/variables";
+
+//Maps
+$iconos: (height: 1.2rem,
+    width: 1.2rem,
+    margin-left: 1rem,
+    margin-right: 1rem,
+);
+
+/*Propiedades generales - mobileFirst*/
+body {
+    overflow-x: hidden;
+}
+
+header {
+    grid-area: header;
+    background-image: $fondoHeader;
+
+    .logoBanner {
+        display: none;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 1.6rem;
+        font-weight: 500;
+        padding-top: 0.9rem;
+    }
+
+    .subtitulo {
+        text-align: center;
+        margin-top: 0.5rem;
+        padding-bottom: 0.1rem;
+        font-size: 1.2rem;
+        font-weight: 300;
+    }
+}
+
+nav {
+    grid-area: nav;
+    border-bottom: solid 2px black;
+    border-top: solid 2px black;
+
+    ul {
+        display: flex;
+        justify-content: space-around;
+        text-align: center;
+        align-self: center;
+
+        li {
+            list-style: none;
+            margin-bottom: 0.3rem;
+            margin-top: 0.3rem;
+            padding: 0.3rem;
+            text-transform: uppercase;
+            font-size: 0.6rem;
+
+            a {
+                text-decoration: none;
+                background-color: $fondoBotones;
+                border-radius: 0.5rem;
+                padding-right: 0.3rem;
+                padding-left: 0.3rem;
+
+                &:hover {
+                    background-color: $colorHover;
+                }
+
+                &:visited {
+                    color: black;
+                }
+            }
+        }
+    }
+}
+
+p {
+    text-align: justify;
+    text-indent: 0.5rem;
+    font-size: 0.9rem;
+    padding: 0.3rem;
+    margin: 1rem;
+}
+
+.botonWA {
+    display: none;
+}
+
+.botonArriba {
+    display: none;
+}
+
+footer {
+    grid-area: footer;
+    background-image: $fondoFooter;
+    border-bottom: solid 2px black;
+    border-top: solid 2px black;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    .iconosRedes {
+        display: flex;
+        justify-content: center;
+
+        .iconos {
+            height: map-get($map: $iconos, $key: height);
+            width: map-get($map: $iconos, $key: width);
+            margin-left: map-get($map: $iconos, $key: margin-left);
+            margin-right: map-get($map: $iconos, $key: margin-right);
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    .pieDePag {
+        text-align: center;
+        color: black;
+        font-size: 0.5rem;
+        margin-top: 1rem;
+    }
+}
+
+/*Propiedades Index*/
+.contenedor {
+    display: grid;
+    height: 100vh;
+    grid-template-areas: "header header"
+        "nav nav"
+        "saludoIndex parrafoIndex"
+        "footer footer";
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto min-content auto min-content;
+    background-image: $fondoPrincipal;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5;
+
+    .saludoIndex {
+        grid-area: saludoIndex;
+        font-size: 0.8rem;
+        text-align: center;
+        align-self: center;
+        margin-left: 0.3rem;
+    }
+
+    .parrafoIndex {
+        grid-area: parrafoIndex;
+        font-size: 1rem;
+        text-align: center;
+        align-self: center;
+    }
+
+    .saludoIndex,
+    .parrafoIndex {
+        margin-top: 3rem;
+    }
+
+    .fondoIndex {
+        display: none;
+    }
+
+}
+
+/*Propiedades quienes-somos.html*/
+.contenedor2 {
+    display: grid;
+    grid-template-areas: "header header"
+        "nav nav"
+        "main1 main1"
+        "main2 main2"
+        "footer footer";
+    background-image: $fondoPrincipal;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5;
+
+    .main1 {
+        grid-area: main1;
+    }
+
+    .main2 {
+        grid-area: main2;
+    }
+
+    .fotoPsi,
+    .fotoPsi2 {
+        display: none;
+    }
+
+    .fotoBio1 {
+        grid-area: fotoBio1;
+    }
+
+    .fotoBio2 {
+        grid-area: fotoBio2;
+    }
+
+    .nombrePsi {
+        font-size: 1.5rem;
+        padding-left: 22px;
+        margin-top: 55px;
+        font-style: italic;
+        text-align: center;
+    }
+}
+
+/*nuestros-articulos*/
+.contenedor3 {
+    height: 100%;
+    display: grid;
+    grid-template-areas: "header header"
+        "nav nav"
+        "main main"
+        "footer footer";
+    grid-template-columns: 20% 80%;
+    grid-template-rows: auto auto auto auto;
+    background-image: $fondoPrincipal;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5;
+
+    main {
+        grid-area: main;
+    }
+
+    .listaArt {
+        display: none;
+    }
+
+    .nombreArt {
+        font-size: 1.5rem;
+        padding-left: 22px;
+        margin-top: 55px;
+        text-align: center;
+    }
+}
+
+
+/*preguntas-frecuentes*/
+.contenedor4 {
+    height: 100%;
+    display: grid;
+    grid-template-areas: "header header"
+        "nav nav"
+        "main main"
+        "footer footer";
+    grid-template-columns: 20% 80%;
+    grid-template-rows: auto auto auto auto;
+    background-image: $fondoPrincipal;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5;
+
+    .listaFaq {
+        display: none;
+    }
+
+    main {
+        grid-area: main;
+    }
+
+    .faq {
+        font-size: 1.5rem;
+        padding-left: 22px;
+        margin-top: 55px;
+        text-align: center;
+    }
+}
+
+/*contacto*/
+.contenedor5 {
+    background-image: $fondoPrincipal;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5;
+
+    .contenedorFormu {
+        margin-right: 1rem;
+        margin-left: 1rem;
+        margin-top: 1rem;
+
+        .datos {
+            padding: 1rem
+        }
+
+        .infoUser {
+            padding: 1rem;
+        }
+    }
+
+    .contenedorFinal {
+        margin-top: 1rem;
+        text-align: center;
+
+        textarea {
+            height: 5rem;
+            width: 22rem;
+        }
+
+        .terms {
+            padding: 1rem;
+        }
+    }
+
+    .botonesFormu {
+        display: flex;
+        margin: 1rem;
+        justify-content: center;
+
+        .botonFormu {
+            margin-right: 1rem;
+            margin-left: 3rem;
+        }
+    }
+}
+
+//Media Queries
+@import "../scss/utilities/mediaQueries";
