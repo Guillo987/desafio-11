@@ -419,10 +419,6 @@ footer {
       text-align: center;
       margin-top: 40px;
       font-size: 2rem; }
-    .contenedor3 .otrosP, .contenedor3 .otrosPFAQ {
-      font-size: 18px;
-      color: darkblue;
-      line-height: 35px; }
   /*preguntas-frecuentes*/
   .contenedor4 {
     display: grid;

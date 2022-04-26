@@ -331,13 +331,6 @@
         .nombreArt {
             @include art-faqDesktop;
         }
-
-        //Extend
-        %parrafos {
-            font-size: 18px;
-            color: darkblue;
-            line-height: 35px;
-        }
     }
 
 
